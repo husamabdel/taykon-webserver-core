@@ -23,6 +23,8 @@ public class serverState implements Runnable{
 
         State = input.nextLine();
 
+        input.close();
+
 
         throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
