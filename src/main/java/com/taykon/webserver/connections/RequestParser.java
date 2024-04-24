@@ -33,11 +33,19 @@ public class RequestParser {
     public void sampleWriterResponse(BufferedWriter writer){
 
         try {
-            writer.write("HTTP/1.1 200 OK\r\n");
-            writer.write("Content-Type: text/plain; charset=utf-8\r\n");
-            writer.write("Connection: close\r\n");
-            writer.write("\n");
-            writer.write("Hello World!");
+            JSONObject responseJson = new JSONObject();
+            String[] respArray = new String[]{"HTTP/1.1 200 OK\r\n",
+                                            "Content-Type: text/plain; charset=utf-8\r\n",
+                                            "Connection: close\r\n",
+                                            "\n",
+                                            "Hello World!\n"};
+            System.out.println("Starting response...\n");
+            for(String item : respArray){
+                System.out.print(item);
+                writer.write(item);
+                writer.flush();
+            }
+            System.out.println("\nResponse concluded.");
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
