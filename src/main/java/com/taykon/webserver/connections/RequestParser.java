@@ -38,7 +38,7 @@ public class RequestParser {
                                             "Content-Type: text/plain; charset=utf-8\r\n",
                                             "Connection: close\r\n",
                                             "\n",
-                                            "Hello World!\n"};
+                                            "<!DOCTYPE html><html><title>test</title><body><h1>Hello World!</h1></body></html>\n"};
             System.out.println("Starting response...\n");
             for(String item : respArray){
                 System.out.print(item);
