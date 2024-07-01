@@ -20,12 +20,18 @@ public class RequestParser {
         return null; // Null as a placeholder only.
     }
 
+    public void ParseAndCreateJson(){
+
+        
+
+    }
+
     public String sampleResponse(){
 
         Date date = new Date();
 
         String SampleResp="HTTP/1.1 200 OK\nDate: "+date.toString()+"\nServer: Taykon\nContent-Type: text/html";
-        String htmlSample="<!DOCTYPE html> <html><body><h1>Hello World!</h1></body></html>";
+        String htmlSample="<!DOCTYPE html> <html><body><h1test</h1></body></html>";
 
         return SampleResp+"\n\n"+htmlSample;
     }
@@ -38,7 +44,7 @@ public class RequestParser {
                                             "Content-Type: text/plain; charset=utf-8\r\n",
                                             "Connection: close\r\n",
                                             "\n",
-                                            "<!DOCTYPE html><html><title>test</title><body><h1>Hello World!</h1></body></html>\n"};
+                                            "<h1>{$ps1}</h1>\r\n"};
             System.out.println("Starting response...\n");
             for(String item : respArray){
                 System.out.print(item);

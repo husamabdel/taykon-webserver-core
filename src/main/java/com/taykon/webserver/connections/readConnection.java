@@ -70,11 +70,11 @@ public class readConnection {
 
                 System.out.println("Connection started with client: "+ClientSocket.getRemoteSocketAddress().toString());
 
-                byte []buffer = new byte[2048];
+                byte []buffer = new byte[4096];
                 int bytesRead = dataIN.read(buffer);
                 String data = new String(buffer, 0, bytesRead);
 
-                System.out.println("Request Data: \n"+data);
+                System.out.println("Request Data: \n"+data.trim());
 
                 RequestParser parser = new RequestParser(data);
                 parser.sampleWriterResponse(writer);
